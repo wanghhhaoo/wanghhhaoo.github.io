@@ -1,0 +1,504 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>css笔记 | wanghhhao</title>
+<link rel="shortcut icon" href="https://wanghhhaoo.github.io/favicon.ico?v=1578914513846">
+<link href="https://cdn.remixicon.com/releases/v2.1.0/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://wanghhhaoo.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="css笔记 | wanghhhao - Atom Feed" href="https://wanghhhaoo.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="编译手段
+先定义功能，后选配功能（先写CSS，后写HTML）
+字体颜色
+
+土鳖式
+
+​		纯英文单词
+​		transparent(透明色)
+
+颜色代码
+
+
+
+
+r
+g
+b
+
+
+
+
+00 - ff
+00 - ff
+00 - ff
+
+
+
+
+
+..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wanghhhaoo.github.io">
+  <img class="avatar" src="https://wanghhhaoo.github.io/images/avatar.png?v=1578914513846" alt="">
+  </a>
+  <h1 class="site-title">
+    wanghhhao
+  </h1>
+  <p class="site-description">
+    记录生活和学习
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              css笔记
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-01-13
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="编译手段">编译手段</h1>
+<p><strong>先定义功能，后选配功能（先写CSS，后写HTML）</strong></p>
+<h1 id="字体颜色">字体颜色</h1>
+<ul>
+<li><strong>土鳖式</strong></li>
+</ul>
+<p>​		纯英文单词<br>
+​		transparent(透明色)</p>
+<ul>
+<li><strong>颜色代码</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>r</th>
+<th>g</th>
+<th>b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00 - ff</td>
+<td>00 - ff</td>
+<td>00 - ff</td>
+</tr>
+</tbody>
+</table>
+<!-- 00-ff：代表颜色饱和程度(十六进制数) -->
+<!-- 表示红色的饱和度为ff，绿色的饱和度为44，蓝色的饱和度为00 -->
+<p>color: #000000; (黑色)</p>
+<p>color: #ffffff; (白色)</p>
+<p>color: #ff4400 / #f40; (淘宝红)</p>
+<p>**简写问题：**如#ff4400可以简写成#f40 (每两位都是重复的才能简写)</p>
+<p><strong>额外拓展</strong></p>
+<table>
+<thead>
+<tr>
+<th>美术三原色</th>
+<th>光学三原色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>红 黄 蓝</td>
+<td>红 绿 蓝</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>颜色函数</strong></li>
+</ul>
+<p>​	rgb(255,255,255)<br>
+​	rgba(255,255,255,0.5)，<strong>这个a表示透明度</strong><br>
+​	<!-- 括号里面的每一个数的范围都是0-255(十进制) --></p>
+<h1 id="盒模型">盒模型</h1>
+<p><strong>正常盒模型的宽度：</strong>（margin + border + padding + (content = width + height)）</p>
+<p><strong>几大部分：</strong></p>
+<ol>
+<li>盒子壁：border</li>
+<li>内边距：padding</li>
+<li>盒子内容：width + height</li>
+<li>内容区：content</li>
+<li>元素：element</li>
+</ol>
+<p><strong>盒子的实际可视大小</strong></p>
+<p>例如：</p>
+<pre><code class="language-css">div{
+	width: 100px;
+	height: 100px;
+	border: 10px;
+	padding: 10px 20px 30px;
+	margin: 10px 20px;
+}
+</code></pre>
+<p>realWidth：2 * 10px（border） + 100px（width） + 10px（padding） + 30px（padding） = 160px</p>
+<p>realHeight：2 * 10px（border） + 100px（height） + 2 * 20px（padding） = 160px</p>
+<h2 id="margin塌陷问题">margin塌陷问题</h2>
+<h3 id="原理">原理</h3>
+<p>父子嵌套的垂直方向的margin，是两者结合的，取两者中的最大值</p>
+<h3 id="解决方法">解决方法</h3>
+<ol>
+<li>
+<p>（非专业，不推荐）给父类选择器加一个border-top</p>
+</li>
+<li>
+<p>触发一个盒子的bfc（改变了盒子里面的渲染规则）</p>
+<ul>
+<li>
+<p>position :  absolution;</p>
+</li>
+<li>
+<p>display :  inline-block;</p>
+</li>
+<li>
+<p>float :  left / right;</p>
+</li>
+<li>
+<p>overflow :  hidden;（隐藏溢出盒子的部分）</p>
+</li>
+</ul>
+<!--margin合并问题：允许存在，可以不解决-->
+</li>
+</ol>
+<h1 id="文本操作">文本操作</h1>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>text-indent</strong>（首行缩进）</td>
+<td>单位：em<br/>首行缩进两字符：2em<br/>1em = 1 font-size = 16px</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>line-height</strong>（行间距）</td>
+<td></td>
+<td>文本纵向居中的方法：<strong>line-height = height</strong></td>
+</tr>
+<tr>
+<td><strong>text-align</strong>（对齐方式）</td>
+<td>left<br/>right<br/>center</td>
+<td>左对齐<br/>右对齐<br/>横向居中</td>
+</tr>
+<tr>
+<td><strong>text-decoration</strong></td>
+<td>line-through<br/>underline<br/>overline<br/>none</td>
+<td>中划线<br/>下划线<br/>上划线<br/>没有线，去掉线</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文字溢出部分用打点展示">文字溢出部分用打点展示</h2>
+<h3 id="单行文本">单行文本</h3>
+<pre><code class="language-html">元素{
+	white-space : nowrp;（不换行）
+	overflow : hidden;（溢出部分隐藏）
+	text-overflow : ellipsis;（溢出部分用...展示）
+}
+</code></pre>
+<h3 id="多行文本">多行文本</h3>
+<p>​		用...展示：估算容器的大小，手动打出来</p>
+<p>​		多行截断：让height等于几倍的line-height，容器就会展示出来几行文字，溢出的部分用overflow : hidden；隐藏即可</p>
+<h1 id="元素类型">元素类型</h1>
+<p>**文本类元素特点：**inline、inline-block</p>
+<p>​		文本分隔符(无论元素之间有多少空格或者换行符，显示出来的都只有有个文本分隔符，若无空格或换行符，则无分隔符)</p>
+<p>**文本类元素之间对齐方式：**底对齐<br>
+当文本类元素里面存在文字，则外面的文字与元素里面的文字底对齐，而不是和元素底对齐</p>
+<p>​		调整对齐线用vertical-align: ...; 也可以用单词，如middle</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>例子</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行级元素（inline）</td>
+<td>除了p标签之外的所有文本级标签<br/>如：span, strong, em, a, del</td>
+<td>1. 内容决定元素所占位置<br/>2. 不可以通过css改变宽高<br/>3. 凡是带有inline,inline-block的元素，都有文本类元素特性，每个元素显示出来之后，中间都有4px的间隔(解决方法：去掉每个元素中间的换行和空格)</td>
+</tr>
+<tr>
+<td>块级元素（block）</td>
+<td>所有容器级元素，以及p标签<br/>如：div, p, ul, li, ol, form, address</td>
+<td>1. 独占一行<br/>2. 可以通过css改变宽高</td>
+</tr>
+<tr>
+<td>行级块元素（inline-block）</td>
+<td>如：img</td>
+<td>1. 内容决定大小<br/>2. 可以改宽高</td>
+</tr>
+</tbody>
+</table>
+<!--以上特性可以在css中通过选择器中的display的值来改变-->
+<h1 id="权重">权重</h1>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>案例</th>
+<th>权重值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>!important</td>
+<td>!important</td>
+<td>Infinity</td>
+</tr>
+<tr>
+<td>行间样式</td>
+<td>style=&quot;..&quot;</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>#id</td>
+<td>100</td>
+</tr>
+<tr>
+<td>class</td>
+<td>.class</td>
+<td>10</td>
+</tr>
+<tr>
+<td>属性</td>
+<td>[type='text']</td>
+<td>10</td>
+</tr>
+<tr>
+<td>伪类</td>
+<td>:hover</td>
+<td>10</td>
+</tr>
+<tr>
+<td>标签</td>
+<td>p</td>
+<td>1</td>
+</tr>
+<tr>
+<td>伪元素</td>
+<td>::first-line</td>
+<td>1</td>
+</tr>
+<tr>
+<td>相邻选择器、子代选择器、通配符</td>
+<td>* &gt; +</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h1 id="背景图片">背景图片</h1>
+<pre><code class="language-html">元素{
+	background-image : url(&quot;图片（相对 / 绝对）地址&quot;);
+	background-size : 宽 高;
+}
+</code></pre>
+<h2 id="若一张图不能铺满容器则重复出现">若一张图不能铺满容器则重复出现</h2>
+<ol>
+<li>使其不重复出现：background-repeat : no-repeat;</li>
+<li>使其在x轴重复：background-repeat : repeat-x;</li>
+<li>使其在y轴重复：background-repeat : repeat-y;</li>
+</ol>
+<h2 id="改变背景图片的位置">改变背景图片的位置</h2>
+<p>​		background-position : x y;（x，y为图片左上角的位置）</p>
+<p>​		x，y可以改用top / right / left / bottom / center（用两个center为居中），也可以用百分数表示（50% 50%与两个center作用相同）</p>
+<h2 id="图片替代文字的操作">图片替代文字的操作</h2>
+<p>​		当去掉css之后，网页依旧可以使用的方法（用于网速较慢的时候）</p>
+<ol>
+<li>
+<pre><code class="language-html">元素{
+	text-indent : 图片容器的宽;（首行缩进）
+	white-space : nowrap;
+	overflow : hidden;
+}
+</code></pre>
+</li>
+<li>
+<p>将height的值改为0，让padding-top的值等于height之前的值，再加上overflow : hidden;</p>
+</li>
+</ol>
+<h1 id="注意">注意</h1>
+<ul>
+<li>行级元素只能嵌套行级元素</li>
+<li>块级元素可以嵌套任何元素</li>
+<li>p标签里面不能嵌套div，否者会被div分成两个p标签</li>
+<li>a标签中不能嵌套a标签</li>
+</ul>
+<h1 id="css-3">css 3</h1>
+<p>W3C的css3文档：https://www.w3school.com.cn/css3/index.asp</p>
+<p>菜鸟教程的css3文档：https://www.runoob.com/css3/css3-tutorial.html</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E7%BC%96%E8%AF%91%E6%89%8B%E6%AE%B5">编译手段</a></li>
+<li><a href="#%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2">字体颜色</a></li>
+<li><a href="#%E7%9B%92%E6%A8%A1%E5%9E%8B">盒模型</a>
+<ul>
+<li><a href="#margin%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98">margin塌陷问题</a>
+<ul>
+<li><a href="#%E5%8E%9F%E7%90%86">原理</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95">解决方法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C">文本操作</a>
+<ul>
+<li><a href="#%E6%96%87%E5%AD%97%E6%BA%A2%E5%87%BA%E9%83%A8%E5%88%86%E7%94%A8%E6%89%93%E7%82%B9%E5%B1%95%E7%A4%BA">文字溢出部分用打点展示</a>
+<ul>
+<li><a href="#%E5%8D%95%E8%A1%8C%E6%96%87%E6%9C%AC">单行文本</a></li>
+<li><a href="#%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC">多行文本</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%85%83%E7%B4%A0%E7%B1%BB%E5%9E%8B">元素类型</a></li>
+<li><a href="#%E6%9D%83%E9%87%8D">权重</a></li>
+<li><a href="#%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87">背景图片</a>
+<ul>
+<li><a href="#%E8%8B%A5%E4%B8%80%E5%BC%A0%E5%9B%BE%E4%B8%8D%E8%83%BD%E9%93%BA%E6%BB%A1%E5%AE%B9%E5%99%A8%E5%88%99%E9%87%8D%E5%A4%8D%E5%87%BA%E7%8E%B0">若一张图不能铺满容器则重复出现</a></li>
+<li><a href="#%E6%94%B9%E5%8F%98%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E7%9A%84%E4%BD%8D%E7%BD%AE">改变背景图片的位置</a></li>
+<li><a href="#%E5%9B%BE%E7%89%87%E6%9B%BF%E4%BB%A3%E6%96%87%E5%AD%97%E7%9A%84%E6%93%8D%E4%BD%9C">图片替代文字的操作</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B3%A8%E6%84%8F">注意</a></li>
+<li><a href="#css-3">css 3</a></li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://wanghhhaoo.github.io/post/ying-yu-xue-xi-xin-de">
+              <h3 class="post-title">
+                英语学习心得
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://wanghhhaoo.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

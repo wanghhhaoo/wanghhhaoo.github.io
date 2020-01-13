@@ -1,0 +1,401 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JS笔记 | wanghhhao</title>
+<link rel="shortcut icon" href="https://wanghhhaoo.github.io/favicon.ico?v=1578914513846">
+<link href="https://cdn.remixicon.com/releases/v2.1.0/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://wanghhhaoo.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="JS笔记 | wanghhhao - Atom Feed" href="https://wanghhhaoo.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="执行上下文的分析思路
+a = 100;
+function demo(e) {
+	function e() {}
+	arguments[0] = 2;
+	document.write(e + &quot; &quot;);
+	if(a) {
+..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wanghhhaoo.github.io">
+  <img class="avatar" src="https://wanghhhaoo.github.io/images/avatar.png?v=1578914513846" alt="">
+  </a>
+  <h1 class="site-title">
+    wanghhhao
+  </h1>
+  <p class="site-description">
+    记录生活和学习
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              JS笔记
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-01-13
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="执行上下文的分析思路">执行上下文的分析思路</h1>
+<pre><code class="language-javascript">a = 100;
+function demo(e) {
+	function e() {}
+	arguments[0] = 2;
+	document.write(e + &quot; &quot;);
+	if(a) {
+		var b = 123;
+		function c() {}
+	}
+	var c;
+	a = 10;
+	var a;
+	document.write(b + &quot; &quot;);
+	f = 123;
+	document.write(c + &quot; &quot;);
+	document.write(a + &quot; &quot;);
+}
+var a;
+demo(1);
+document.write(a + &quot; &quot;);
+document.write(f + &quot; &quot;);
+</code></pre>
+<p>首先AO是这样的</p>
+<pre><code>A0{
+	e : undefined;
+	b : undefined;
+	c : undefined;
+	a : undefined;
+}
+</code></pre>
+<p>然后变成这样</p>
+<pre><code>AO{
+	e : function e() {};
+	b : undefined; (因为a的值此时还是undefined，不执行a中的内容，所以b的值为undefined)
+	c : function c() {}; (当if中能够定义函数时c是function () {}，此时实际上c是undefined)
+	a : undefined;
+}
+</code></pre>
+<p>因为arguments[0] = 2，且arguments[0]与e相映射，arguments[0]变则e变，e变则arguments[0]变，所以e的值变成了2</p>
+<pre><code>AO{
+	e : 2;
+	b : undefined; (因为a的值此时还是undefined，不执行a中的内容，所以b的值为undefined)
+	c : function c() {}; (当if中能够定义函数时c是function () {}，此时实际上c是undefined)
+	a : 10;
+}
+</code></pre>
+<p>因为f未被定义，所以要去全局变量GO中寻找</p>
+<pre><code>GO{
+	a = 100; (这个a是全局变量，和上面的a不一样)
+	f = 123;
+}
+</code></pre>
+<p>上面的代码的执行结果：2 undefined undefined 10 100 123</p>
+<h1 id="dom操作">DOM操作</h1>
+<!--document代表了整个文档-->
+<ul>
+<li>
+<p>增</p>
+<ul>
+<li>
+<p>document.creatElement()<!--创建元素节点--></p>
+</li>
+<li>
+<p>document.creatTextNode()<!--创建文本节点--></p>
+</li>
+<li>
+<p>document.creatComment()<!--创建注释节点--></p>
+</li>
+<li>
+<p>document.creatDocumentFragment()<!--创建文档碎片节点--></p>
+</li>
+</ul>
+</li>
+<li>
+<p>删</p>
+<ul>
+<li>父级元素.removeChild()</li>
+<li>元素.remove()</li>
+</ul>
+</li>
+<li>
+<p>改（替换）</p>
+<ul>
+<li>父级元素.replaceChild(new, origin)</li>
+</ul>
+</li>
+<li>
+<p>查</p>
+<ul>
+<li>
+<p>document.getElementById() <!--元素id--></p>
+</li>
+<li>
+<p>document.getElementsByTagName() <!--标签名，会形成一个类数组--></p>
+</li>
+<li>
+<p>document.getElementByName() <!--需注意，只有部分标签name可以生效（表单，表单元素，img, iframe）--></p>
+</li>
+<li>
+<p>document.getElementsByClassName() <!--类名，会形成一个类数组--></p>
+</li>
+<li>
+<p>document.querySelector() <!--css选择器--></p>
+</li>
+<li>
+<p>document.querySelectorAll() <!--css选择器--></p>
+<!--querySelector()和querySelectorAll()没有实时性-->
+</li>
+</ul>
+</li>
+<li>
+<p>插</p>
+<ul>
+<li>父级元素.appendChild()</li>
+<li>父级元素.insertBefore(a, b)</li>
+</ul>
+<!--任何元素节点都有appendChild()方法，剪切操作-->
+</li>
+</ul>
+<h2 id="节点">节点</h2>
+<h3 id="节点类型">节点类型</h3>
+<ul>
+<li>元素节点 -- 1</li>
+<li>属性节点 -- 2</li>
+<li>文本节点 -- 3</li>
+<li>注释节点 -- 8</li>
+<li>document -- 9</li>
+<li>DocumentFragment -- 11</li>
+</ul>
+<!--获取节点类型：nodeType（返回后面的数字）-->
+<h3 id="节点的四个属性">节点的四个属性</h3>
+<ul>
+<li>nodeName <!--元素的标签名，以大写形式表示，只读--></li>
+<li>nodeValue <!--Text节点或Comment节点的文本内容，可读写--></li>
+<li>nodeType <!--该节点的类型，只读--></li>
+<li>attributes <!--Element节点的属性结合--></li>
+</ul>
+<p>节点的一个方法：Node.hasChildNodes()</p>
+<h2 id="dom树">DOM树</h2>
+<figure data-type="image" tabindex="1"><img src="https://wanghhhaoo.github.io/post-images/1578914381923.png" alt="" loading="lazy"></figure>
+<h2 id="遍历节点树">遍历节点树</h2>
+<ul>
+<li>parentNode --&gt; 父节点</li>
+<li>childNodes --&gt; 子节点们</li>
+<li>firstChild --&gt; 第一个子节点</li>
+<li>lastChild --&gt; 最后一个子节点</li>
+<li>previousSibling --&gt; 前一个兄弟节点</li>
+<li>nextSibling --&gt; 后一个兄弟节点</li>
+</ul>
+<p><strong>继承关系</strong></p>
+<p>document --&gt; HTMLDocument.prototype --&gt; Document.prototype</p>
+<h2 id="注意">注意</h2>
+<p>​		使用document.getElementsByClassName(&quot;&quot;)和document.getElementsByTagName(&quot;&quot;)的时候，会形成一个类数组，如果要调用里面的一个元素，调用方法跟数组类似，如</p>
+<pre><code class="language-html">&lt;div class=&quot;content&quot;&gt;
+	&lt;div class=&quot;middle&quot;&gt;
+		&lt;div class=&quot;inner-middl	SSe&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;middle&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">var div = document.getElementsByTagName(&quot;div&quot;)[0];
+var content = document.getElementsByClassName(&quot;content&quot;)[0];
+var middle = document.getElementsByClassName(&quot;middle&quot;)[0];
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://wanghhhaoo.github.io/post-images/1578914428424.png" alt="" loading="lazy"></figure>
+<h1 id="日期对象">日期对象</h1>
+<p>定义一个日期对象的方法：</p>
+<pre><code class="language-javascript">var date = new Date();
+</code></pre>
+<h1 id="jquery">jQuery</h1>
+<p>jQuery中文文档：https://www.jquery123.com</p>
+<p>W3C的jQuery文档：https://www.w3school.com.cn/jquery/index.asp</p>
+<p>菜鸟教程的jQuery文档：https://www.runoob.com/jquery/jquery-tutorial.html</p>
+<p><strong>引用方式</strong>，<!--以下是引用本地文件--></p>
+<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h2 id="jquery库的三种地址">jQuery库的三种地址</h2>
+<ul>
+<li>下载jQuery本地文件的链接：https://jquery.com/download</li>
+<li>bootCDN：https://www.bootcdn.cn/jquery</li>
+<li>Google的CDN：https://developers.google.com/speed/libraries</li>
+<li>Microsoft的CDN：https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview</li>
+</ul>
+<h2 id="注意-2">注意</h2>
+<p>所有 jQuery 函数位于一个 document的ready 函数（文档就绪函数）中：</p>
+<pre><code class="language-javascript">$(document).ready(function(){
+	--- jQuery functions go here ----
+});
+</code></pre>
+<p>这是为了防止文档在完全加载（就绪）之前运行 jQuery 代码。</p>
+<p>如果在文档没有完全加载之前就运行函数，操作可能失败。下面是两个具体的例子：</p>
+<ul>
+<li>试图隐藏一个不存在的元素</li>
+<li>获得未完全加载的图像的大小</li>
+</ul>
+<h1 id="ajax">Ajax</h1>
+<p>W3C的Ajax文档：https://www.w3school.com.cn/ajax/index.asp</p>
+<p>菜鸟教程的Ajax文档：https://www.runoob.com/ajax/ajax-tutorial.html</p>
+<p>注意：**运行Ajax文件要在服务器上面运行：</p>
+<ol>
+<li>打开xampp，打开apache</li>
+<li>访问地址：localhost/...（相对路径）</li>
+</ol>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E7%9A%84%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF">执行上下文的分析思路</a></li>
+<li><a href="#dom%E6%93%8D%E4%BD%9C">DOM操作</a>
+<ul>
+<li><a href="#%E8%8A%82%E7%82%B9">节点</a>
+<ul>
+<li><a href="#%E8%8A%82%E7%82%B9%E7%B1%BB%E5%9E%8B">节点类型</a></li>
+<li><a href="#%E8%8A%82%E7%82%B9%E7%9A%84%E5%9B%9B%E4%B8%AA%E5%B1%9E%E6%80%A7">节点的四个属性</a></li>
+</ul>
+</li>
+<li><a href="#dom%E6%A0%91">DOM树</a></li>
+<li><a href="#%E9%81%8D%E5%8E%86%E8%8A%82%E7%82%B9%E6%A0%91">遍历节点树</a></li>
+<li><a href="#%E6%B3%A8%E6%84%8F">注意</a></li>
+</ul>
+</li>
+<li><a href="#%E6%97%A5%E6%9C%9F%E5%AF%B9%E8%B1%A1">日期对象</a></li>
+<li><a href="#jquery">jQuery</a>
+<ul>
+<li><a href="#jquery%E5%BA%93%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9C%B0%E5%9D%80">jQuery库的三种地址</a></li>
+<li><a href="#%E6%B3%A8%E6%84%8F-2">注意</a></li>
+</ul>
+</li>
+<li><a href="#ajax">Ajax</a></li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://wanghhhaoo.github.io/post/css-bi-ji">
+              <h3 class="post-title">
+                css笔记
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://wanghhhaoo.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
