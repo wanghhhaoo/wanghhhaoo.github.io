@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wanghhhaoo.github.io</id>
     <title>梦开始的地方</title>
-    <updated>2020-01-13T10:56:02.555Z</updated>
+    <updated>2020-01-13T10:57:48.335Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wanghhhaoo.github.io"/>
     <link rel="self" href="https://wanghhhaoo.github.io/atom.xml"/>
@@ -16,6 +16,20 @@
         <link href="https://wanghhhaoo.github.io/post/ying-yu-xue-xi-xin-de">
         </link>
         <updated>2020-01-13T10:42:29.000Z</updated>
+        <summary type="html"><![CDATA[<p>##四六级做题技巧<br>
+备考顺序：</p>
+<ul>
+<li>
+<p><strong>备考顺序</strong>：单词 → 听力 → 阅读 → 翻译 → 写作</p>
+</li>
+<li>
+<p><strong>做题顺序</strong>：写作 → 听力 → 仔细阅读 → 信息匹配 → 翻译 → 选词填空</p>
+</li>
+<li>
+<p><strong>核心</strong>：真题（真题宝贵不要浪费）+ 技巧（各类题型都有技巧）</p>
+</li>
+</ul>
+]]></summary>
         <content type="html"><![CDATA[<p>##四六级做题技巧<br>
 备考顺序：</p>
 <ul>
@@ -26,10 +40,11 @@
 <p><strong>做题顺序</strong>：写作 → 听力 → 仔细阅读 → 信息匹配 → 翻译 → 选词填空</p>
 </li>
 <li>
-<p><strong>核心</strong>：真题（真题宝贵不要浪费）+ 技巧（各类题型都有技巧）<br>
-多做真题！</p>
+<p><strong>核心</strong>：真题（真题宝贵不要浪费）+ 技巧（各类题型都有技巧）</p>
 </li>
 </ul>
+<!--more-->
+<p>多做真题！</p>
 <p>多做真题！</p>
 <p>多做真题！</p>
 <p>单词一定得背！！！</p>
