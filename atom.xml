@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wanghhhaoo.github.io</id>
-    <title>梦开始的地方</title>
-    <updated>2020-01-13T10:57:48.335Z</updated>
+    <title>wanghhhao</title>
+    <updated>2020-01-13T11:01:40.154Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wanghhhaoo.github.io"/>
     <link rel="self" href="https://wanghhhaoo.github.io/atom.xml"/>
     <subtitle>记录生活和学习</subtitle>
     <logo>https://wanghhhaoo.github.io/images/avatar.png</logo>
     <icon>https://wanghhhaoo.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 梦开始的地方</rights>
+    <rights>All rights reserved 2020, wanghhhao</rights>
     <entry>
         <title type="html"><![CDATA[英语学习心得]]></title>
         <id>https://wanghhhaoo.github.io/post/ying-yu-xue-xi-xin-de</id>
@@ -50,8 +50,8 @@
 <p>单词一定得背！！！</p>
 <!--我自己在网上COPY的别人的，但是根据自己的理解和水平，觉得挺有道理的-->
 <p>学了这么久的英语，现在才意识到了单词对英语的重要性，如果没有一定的词汇量，做题就如同以下这样：<br>
-<img src="https://wanghhhaoo.github.io/post-images/1578912871360.jpg" alt="" loading="lazy"><br>
-就算自己的语法很好，但是一句话只能看懂几个单词，也没用。</p>
+<img src="https://wanghhhaoo.github.io/post-images/1578912871360.jpg" alt="" loading="lazy"></p>
+<p>就算自己的语法很好，但是一句话只能看懂几个单词，也没用。</p>
 <p>所以我觉得<strong>词汇量是学英语的核心中的核心</strong>。</p>
 ]]></content>
     </entry>
