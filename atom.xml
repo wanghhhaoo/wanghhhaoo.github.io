@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wanghhhaoo.github.io</id>
     <title>wanghhhao</title>
-    <updated>2020-01-13T11:24:03.527Z</updated>
+    <updated>2020-02-12T13:54:40.470Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wanghhhaoo.github.io"/>
     <link rel="self" href="https://wanghhhaoo.github.io/atom.xml"/>
@@ -10,6 +10,56 @@
     <logo>https://wanghhhaoo.github.io/images/avatar.png</logo>
     <icon>https://wanghhhaoo.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, wanghhhao</rights>
+    <entry>
+        <title type="html"><![CDATA[《老友记》学习之路]]></title>
+        <id>https://wanghhhaoo.github.io/post/lesslesslao-you-ji-greatergreater-xue-xi-zhi-lu</id>
+        <link href="https://wanghhhaoo.github.io/post/lesslesslao-you-ji-greatergreater-xue-xi-zhi-lu">
+        </link>
+        <updated>2020-02-12T10:13:00.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="第一季">第一季</h1>
+<h5 id="第一级">第一级</h5>
+<p><strong>词汇</strong></p>
+<ol>
+<li>
+<p>bemused</p>
+<ul>
+<li><strong>英</strong> [bɪˈmjuːzd]   <strong>美</strong> [bɪˈmjuːzd]</li>
+<li>adj. 困惑的；发呆的</li>
+<li>v. 使...发呆（bemuse的过去式和过去分词）</li>
+</ul>
+</li>
+<li>
+<p>hump</p>
+<ul>
+<li><strong>英</strong> [hʌmp]   <strong>美</strong> [hʌmp]</li>
+<li>n. 驼峰；驼背；圆形隆起物</li>
+<li>vi. 隆起；努力；急速前进</li>
+<li>vt. 使...隆起；使...烦恼</li>
+<li>
+<!--复数 humps 过去式 humped 过去分词 humped 现在分词 humping-->
+</li>
+</ul>
+</li>
+<li>
+<p>go through</p>
+<ul>
+<li>参加；经受；仔细检查；通过</li>
+</ul>
+</li>
+<li>
+<p>chalk</p>
+<ul>
+<li><strong>英</strong> [tʃɔːk]  <strong>美</strong> [tʃɔːk]</li>
+<li>n. 粉笔；用粉笔划的记号；白垩</li>
+<li>v. 用粉笔写；用白垩粉擦；获得（成功），记录（得分等）；记下（欠账等）；把某事归因于；</li>
+<li>
+<!--过去式 chalked 过去分词 chalked 现在分词 chalking 第三人称单数 chalks-->
+</li>
+</ul>
+</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JS笔记]]></title>
         <id>https://wanghhhaoo.github.io/post/js-bi-ji</id>
