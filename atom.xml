@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wanghhhaoo.github.io</id>
     <title>wanghhhao</title>
-    <updated>2020-02-12T13:56:09.174Z</updated>
+    <updated>2020-03-13T10:30:58.775Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wanghhhaoo.github.io"/>
     <link rel="self" href="https://wanghhhaoo.github.io/atom.xml"/>
@@ -10,6 +10,96 @@
     <logo>https://wanghhhaoo.github.io/images/avatar.png</logo>
     <icon>https://wanghhhaoo.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, wanghhhao</rights>
+    <entry>
+        <title type="html"><![CDATA[暂定的学习计划]]></title>
+        <id>https://wanghhhaoo.github.io/post/zan-ding-de-xue-xi-ji-hua</id>
+        <link href="https://wanghhhaoo.github.io/post/zan-ding-de-xue-xi-ji-hua">
+        </link>
+        <updated>2020-03-13T10:02:40.000Z</updated>
+        <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th>节次</th>
+<th>时间</th>
+<th>Mon</th>
+<th>Tues</th>
+<th>Wed</th>
+<th>Thur</th>
+<th>Fri</th>
+<th>Sat</th>
+<th>Sun</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>8:00-9:35</td>
+<td></td>
+<td><strong>云计算技术</strong></td>
+<td><strong>毛概</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>10:00-11:35</td>
+<td><strong>高级计算机体系结构</strong>（1-8周）</td>
+<td><strong>高级计算机体系结构</strong>（1-8周）</td>
+<td><strong>计算机网络</strong>（实训）</td>
+<td><strong>大学生就业指导理论与实践</strong>（1-8周）</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5-6</td>
+<td>14:20- 15:55</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>计算机网络</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7-8</td>
+<td>16:20–17:55</td>
+<td></td>
+<td><strong>机器学习创新通识</strong>（实践）</td>
+<td><strong>机器学习创新通识</strong>（实践）</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9-10</td>
+<td>19:00–20:35</td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>毛概</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!--以上为我本学习的课表，我就依此来指定我本学期的学习计划。-->
+<p>上午以英语学习为主</p>
+<ul>
+<li>记单词</li>
+<li>做题</li>
+</ul>
+<p>下午以专业课为主</p>
+<ul>
+<li>数据结构</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[《老友记》笔记]]></title>
         <id>https://wanghhhaoo.github.io/post/lesslesslao-you-ji-greatergreater-xue-xi-zhi-lu</id>
@@ -55,6 +145,30 @@
 <li>
 <!--过去式 chalked 过去分词 chalked 现在分词 chalking 第三人称单数 chalks-->
 </li>
+</ul>
+</li>
+<li>
+<p>cafeteria</p>
+<ul>
+<li><strong>英</strong> [ˌkæfəˈtɪəriə]  <strong>美</strong> [ˌkæfəˈtɪriə]</li>
+<li>n. 自助餐厅； 小餐厅；快餐厅</li>
+</ul>
+</li>
+<li>
+<p>naked</p>
+<ul>
+<li><strong>英</strong> [ˈneɪkɪd]  <strong>美</strong> [ˈneɪkɪd]</li>
+<li>adj. 裸体的；无装饰的；无证据的；直率的</li>
+</ul>
+</li>
+<li>
+<p>weird</p>
+<ul>
+<li><strong>英</strong> [wɪəd]  <strong>美</strong> [wɪrd]</li>
+<li>adj. 怪异的；不可思议的；超自然的</li>
+<li>n. （苏格兰）命运；预言</li>
+<li>
+<!--复数 weirds--></li>
 </ul>
 </li>
 </ol>
