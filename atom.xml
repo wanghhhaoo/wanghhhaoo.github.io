@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wanghhhaoo.github.io</id>
     <title>wanghhhao</title>
-    <updated>2020-03-13T11:22:25.288Z</updated>
+    <updated>2020-03-13T11:38:03.986Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wanghhhaoo.github.io"/>
     <link rel="self" href="https://wanghhhaoo.github.io/atom.xml"/>
@@ -89,15 +89,30 @@
 </tbody>
 </table>
 <!--以上为我本学习的课表，我就依此来指定我本学期的学习计划。-->
-<p>上午以英语学习为主</p>
+<ol>
+<li>
+<p>英语学习</p>
 <ul>
 <li>记单词</li>
+<li>练习口语（包含听力）</li>
+<li>阅读</li>
 <li>做题</li>
 </ul>
-<p>下午以专业课为主</p>
+</li>
+<li>
+<p>专业课学习</p>
 <ul>
-<li>数据结构</li>
+<li>将数据结构课程全部学完</li>
 </ul>
+</li>
+<li>
+<p>前端学习</p>
+<ul>
+<li>将之前还未学完的JS课程学完</li>
+<li>学习jQuery、以及vue</li>
+</ul>
+</li>
+</ol>
 ]]></content>
     </entry>
     <entry>
