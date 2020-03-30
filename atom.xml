@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wanghhhaoo.github.io</id>
     <title>wanghhhao</title>
-    <updated>2020-03-13T11:38:03.986Z</updated>
+    <updated>2020-03-30T06:30:53.927Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wanghhhaoo.github.io"/>
     <link rel="self" href="https://wanghhhaoo.github.io/atom.xml"/>
@@ -10,6 +10,77 @@
     <logo>https://wanghhhaoo.github.io/images/avatar.png</logo>
     <icon>https://wanghhhaoo.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, wanghhhao</rights>
+    <entry>
+        <title type="html"><![CDATA[数据结构笔记（Javascript）]]></title>
+        <id>https://wanghhhaoo.github.io/post/shu-ju-jie-gou-bi-ji-javascript</id>
+        <link href="https://wanghhhaoo.github.io/post/shu-ju-jie-gou-bi-ji-javascript">
+        </link>
+        <updated>2020-03-30T06:15:00.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="stack">Stack</h1>
+<pre><code class="language-javascript">function Stack() {
+	// 栈中的属性
+	var items = [];
+
+	// 栈相关的方法
+
+    // 压栈操作
+    Stack.prototype.push = function (element) {
+        items.push(element);
+    }
+
+    // 出栈操作
+	Stack.prototype.pop = function () {
+        return items.pop();
+    }
+
+    // peek操作
+    Stack.prototype.peek = function () {
+        return items[items.length - 1];
+    }
+
+    // 判断栈中的元素是否为空
+    Stack.prototype.isEmpty = function () {
+        return items.length == 0;
+    }
+
+    // 获取栈中元素的个数
+    Stack.prototype.size = function () {
+        return items.length;
+    }
+
+    // toString方法（将栈中数据打印出来）
+    Stack.prototype.toString = function (){
+    	var resultString = &quot; &quot;;
+    	for(var i = 0; i &lt; items.length; i++){
+    		resultString += items[i] + &quot; &quot;;
+    	}
+    	return resultString;
+    }
+}
+</code></pre>
+<h2 id="栈的运用">栈的运用</h2>
+<pre><code class="language-javascript">function toBin(num) {
+    // 创建一个栈
+	var s = new Stack();
+    // 定义一个余数
+	var remainder;
+	while(num &gt; 0){
+		remainder = num % 2;
+        
+        // 令要num / 2之后得到一个整型的值
+		num = Math.floor(num / 2);
+		s.push(remainder);
+	}
+    // 取出二进制数
+	var binNum = &quot;&quot;;
+	while(!s.isEmpty()){
+		binNum += s.pop();
+	}
+	return binNum;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[暂定的学习计划]]></title>
         <id>https://wanghhhaoo.github.io/post/zan-ding-de-xue-xi-ji-hua</id>

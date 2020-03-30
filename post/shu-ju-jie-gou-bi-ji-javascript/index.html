@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Javascript | wanghhhao</title>
+<title>数据结构笔记（Javascript） | wanghhhao</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,16 @@
 
 
 
-    <meta name="description" content="记录生活和学习的地方">
+    <meta name="description" content="Stack
+function Stack() {
+	// 栈中的属性
+	var items = [];
+
+	// 栈相关的方法
+
+    // 压栈操作
+    Stack.prototype.push = function (elemen..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -92,28 +101,91 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: Javascript</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://wanghhhaoo.github.io/post/js-bi-ji">
-                  <h2 class="post-title">JS笔记</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-13
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">数据结构笔记（Javascript）</h2>
+            <div class="post-date">2020-03-30</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="stack">Stack</h1>
+<pre><code class="language-javascript">function Stack() {
+	// 栈中的属性
+	var items = [];
 
-          <div class="pagination-container">
-  
-  
-</div>
+	// 栈相关的方法
+
+    // 压栈操作
+    Stack.prototype.push = function (element) {
+        items.push(element);
+    }
+
+    // 出栈操作
+	Stack.prototype.pop = function () {
+        return items.pop();
+    }
+
+    // peek操作
+    Stack.prototype.peek = function () {
+        return items[items.length - 1];
+    }
+
+    // 判断栈中的元素是否为空
+    Stack.prototype.isEmpty = function () {
+        return items.length == 0;
+    }
+
+    // 获取栈中元素的个数
+    Stack.prototype.size = function () {
+        return items.length;
+    }
+
+    // toString方法（将栈中数据打印出来）
+    Stack.prototype.toString = function (){
+    	var resultString = &quot; &quot;;
+    	for(var i = 0; i &lt; items.length; i++){
+    		resultString += items[i] + &quot; &quot;;
+    	}
+    	return resultString;
+    }
+}
+</code></pre>
+<h2 id="栈的运用">栈的运用</h2>
+<pre><code class="language-javascript">function toBin(num) {
+    // 创建一个栈
+	var s = new Stack();
+    // 定义一个余数
+	var remainder;
+	while(num &gt; 0){
+		remainder = num % 2;
+        
+        // 令要num / 2之后得到一个整型的值
+		num = Math.floor(num / 2);
+		s.push(remainder);
+	}
+    // 取出二进制数
+	var binNum = &quot;&quot;;
+	while(!s.isEmpty()){
+		binNum += s.pop();
+	}
+	return binNum;
+}
+</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://wanghhhaoo.github.io/post/zan-ding-de-xue-xi-ji-hua">
+                  <h3 class="post-title">
+                    暂定的学习计划
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
 
         </div>
       </div>
